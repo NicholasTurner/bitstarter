@@ -4,8 +4,9 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 //  response.send('Hello World 2!');
-    indexBuffer = fs.readFileSync('index.html');
-    indexContents = indexBuffer.toString();
+    var fs = require('fs');
+    var indexBuffer = fs.readFileSync('index.html');
+    var indexContents = indexBuffer.toString();
     response.send(indexContents);
 });
 
